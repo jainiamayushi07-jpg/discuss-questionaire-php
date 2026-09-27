@@ -1,0 +1,15 @@
+a{
+    color:blue !important;
+}
+.question-list {
+    border: 2px solid #ddd;
+    padding: 10px;
+    margin:9px;
+}
+.question-list a {
+    font-size: 22px;
+
+}
+.margin-bottom-20{
+    margin-bottom:20px;
+}
