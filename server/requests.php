@@ -63,9 +63,7 @@ elseif(isset($_GET['logout'])){
         header('Location:/discuss-php-practice');
     }
 }//ask
-elseif(){
-    
-}
+
         
         
     
