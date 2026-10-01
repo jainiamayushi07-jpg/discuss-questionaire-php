@@ -63,6 +63,19 @@ elseif(isset($_GET['logout'])){
         header('Location:/discuss-php-practice');
     }
 }//ask
+elseif(isset($_POST['submit-answer'])){
+    echo $_POST['question_id'];
+}
+
+
+    // $answer=$_POST['answer'];
+
+    // $answer_insert=$conn->prepare("INSERT INTO answers(answer,question_id,user_id)VALUES('".$answer."','".$question_id."','')");
+    // $result=$answer_insert->execute();
+    // if($result){
+    //    header("Location:/discuss-php-practice");
+        
+    // }
 
         
         

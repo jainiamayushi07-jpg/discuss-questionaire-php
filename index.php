@@ -18,9 +18,9 @@ include "./client/login.php";
 else if(isset($_GET['ask']) && isset($_SESSION['user'])){
     include "./client/ask-questions.php";
 }
-elseif($_GET['q-id']){
-    $question_id=$_GET['q-id'];
+else if(isset($_GET['q-id'])){
     include "./client/question-details.php";
+   
 }
 else{
     include "./client/questions.php";
