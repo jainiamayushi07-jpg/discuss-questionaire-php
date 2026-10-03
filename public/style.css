@@ -16,3 +16,6 @@ a{
 .question-title{
     color:  #305CDE;
 }
+.answer-wrapper{
+    margin-left:30px;
+}
