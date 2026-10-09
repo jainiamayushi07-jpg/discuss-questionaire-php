@@ -1,5 +1,5 @@
 <?php include "./common/db.php";?>
-<div class="container signup">
+<div class="container col-6 signup">
     <h1> Ask Question</h1>
 <form method="post" action="./server/requests.php">
   <div class="form-group">
