@@ -19,10 +19,14 @@
        <li class="nav-item">
         <a class="nav-link" href="?ask=true">Ask A Question</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" href="?uid=$_SESSION['user']['user_id]">My Questions</a>
+      </li>
      <?php } else {?>
        <li class="nav-item">
         <a class="nav-link" href="?signup=true">SignUp</a>
-      </li> 
+      </li>
+       
       <li class="nav-item">
         <a class="nav-link" href="?login=true">Login</a>
       </li>

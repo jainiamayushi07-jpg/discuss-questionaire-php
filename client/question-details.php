@@ -25,19 +25,20 @@
     </form>
    </div>
    <div class="col-4">
-    <h1>Hello</h1>
+    <h1></h1>
     <?php $category_questions="select * from questions where id=$question_id";
     $result_questions=$conn->query($category_questions);
     foreach($result_questions as $row_questions){
        $category_id=$row_questions['category_id'];
-       $query1="select * from questions where category_id=$category_id";
+       $query1="select * from questions where category_id=$category_id and id!=$question_id";
        $result1=$conn->query($query1);
        foreach($result1 as $row1){
-        echo $row1['title'];
+        $questions1_id=$row1['id'];
+        $title1=$row1['title'];
+        echo "<a href='?q-id=$questions1_id'><h4>$title1</h4></a>";
        }
 
-
-    }
+ }
    
     ?>
    </div>
