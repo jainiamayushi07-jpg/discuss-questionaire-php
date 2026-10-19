@@ -38,5 +38,9 @@
         <a class="nav-link" href="">Latest Questions</a>
       </li>
     </ul>
+     <form class="form-inline my-2 my-lg-0" action="">
+      <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search Questions" aria-label="Search">
+      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
   </div>
 </nav>

@@ -3,7 +3,7 @@
    <div class="col-8">
     <?php 
     include'./common/db.php';
-    echo $question_id=$_GET['q-id'];//from index page
+    $question_id=$_GET['q-id'];//from index page
     $query="select * from questions where id=$question_id";
     $result=$conn->query($query);
     foreach($result as $row){

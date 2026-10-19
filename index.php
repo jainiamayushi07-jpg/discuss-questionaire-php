@@ -20,7 +20,12 @@ else if(isset($_GET['ask']) && isset($_SESSION['user'])){
 }
 else if(isset($_GET['q-id'])){
     include "./client/question-details.php";
-   
+}
+elseif(isset($_GET['uid'])){
+    include "./client/questions.php";
+}
+elseif(isset($_GET['search'])){
+    include "./client/questions.php";
 }
 else{
     include "./client/questions.php";

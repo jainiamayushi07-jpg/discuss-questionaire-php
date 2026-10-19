@@ -11,11 +11,8 @@ if(isset($_POST['signup'])){
     $address=$_POST['address'];
     $user=$conn->prepare("INSERT INTO users(username,email,password,contact,address)VALUES('".$username."','".$email."','".$password."',$contact,'".$address."')");
     $result=$user->execute();
-    if($result){
-        $_SESSION['user']=['username'=>$username ,'email'=>$email];
-        header('Location: /discuss-php-practice');
-        
-    }
+    header('Location: /discuss-php-practice');
+    }// signup
 
     
     // SQL query template
@@ -26,12 +23,11 @@ if(isset($_POST['signup'])){
    //header('Location: /discuss-php-practice');
   
 
-}// signup
+
 elseif(isset($_POST['login'])){
     $email=$_POST['email'];
     $password=$_POST['password'];
     print_r($_POST);
-    
     $query="select * from users where email='".$email."' and password='".$password."'";
     $login_result=$conn->query($query);
     if($login_result->num_rows==1)
@@ -43,7 +39,7 @@ elseif(isset($_POST['login'])){
         //echo "user registered successfully";
         header('Location:/discuss-php-practice');
         }
-        
+       
     }
 }
     

@@ -1,13 +1,21 @@
+<?php include "./common/db.php"; ?>
 <div class="container">
     <div class="row">
       <div class="col-8">
-        <h1> Questions </h1>
-        <?php 
-          include "./common/db.php";
+        <h2>Questions</h2>
+           <?php      
           if(isset($_GET['category_id']) && $_GET['category_id']!=""){
-             $category_id = $_GET['category_id'];
-           echo  $query="select * from questions where category_id=$category_id";
+            $category_id = $_GET['category_id'];
+            $query="select * from questions where category_id=$category_id";
           }
+          elseif(isset($_GET['uid'])){
+            $userid=$_GET['uid'];
+            $query="select * from questions where user_id=$userid";
+          }
+           elseif(isset($_GET['search'])){
+            $search_questions=$_GET['search'];
+            $query="select * from questions where title LIKE '%$search_questions%'";
+          }         
           else{
           $query= "select * from questions";
           }
@@ -17,7 +25,7 @@
           $question_id=$row['id'];
           $description=$row['description'];
            echo "<div class='question-list'>
-           <h4><a href='?q-id=$question_id'>$title</a></h4>
+           <h6><a href='?q-id=$question_id'>$title</a></h6>
            <p>$description</p>
            </div>";}?>
       </div>
