@@ -67,5 +67,14 @@ elseif(isset($_POST['submit-answer'])){
     $submit_answer->execute();
     header("Location:/discuss-php-practice");
     }
+    elseif(isset($_GET['myquestion-id'])){
+       $myquestion_id=$_GET['myquestion-id'];
+        
+        $delete_question=$conn->prepare("delete from questions where id=$myquestion_id");
+        $result_delete_question=$delete_question->execute();
+        if($result_delete_question){
+            header('Location:/discuss-php-practice');
+        }
+    }
    
 ?>

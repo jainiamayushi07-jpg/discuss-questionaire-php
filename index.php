@@ -18,10 +18,13 @@ include "./client/login.php";
 else if(isset($_GET['ask']) && isset($_SESSION['user'])){
     include "./client/ask-questions.php";
 }
-else if(isset($_GET['q-id'])){
+else if(isset($_GET['q-id']) && isset($_SESSION['user'])){
     include "./client/question-details.php";
 }
 elseif(isset($_GET['uid'])){
+    include "./client/questions.php";
+}
+elseif(isset($_GET['latest'])){
     include "./client/questions.php";
 }
 elseif(isset($_GET['search'])){

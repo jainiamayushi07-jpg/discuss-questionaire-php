@@ -15,7 +15,10 @@
            elseif(isset($_GET['search'])){
             $search_questions=$_GET['search'];
             $query="select * from questions where title LIKE '%$search_questions%'";
-          }         
+          }
+          elseif(isset($_GET['latest'])){
+            $query="select * from questions ORDER BY id DESC";
+          }           
           else{
           $query= "select * from questions";
           }
@@ -25,9 +28,15 @@
           $question_id=$row['id'];
           $description=$row['description'];
            echo "<div class='question-list'>
-           <h6><a href='?q-id=$question_id'>$title</a></h6>
-           <p>$description</p>
-           </div>";}?>
+           <h6 class='my-question'><a href='?q-id=$question_id'>$title</a>";
+           if(isset($userid) && $userid){
+               echo "<a href='./server/requests.php?myquestion-id=$question_id'>Delete</a>";
+           } else {
+               echo "None";
+           }
+           echo "</h6></div>";
+          }?>
+           
       </div>
       <div class="col-4"><h1> Categories </h1>
         <?php $category_query ="select * from category";
